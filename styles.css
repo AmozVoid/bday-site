@@ -1,62 +1,32 @@
-/* styles.css */
+/* Space-themed background with animated stars */
+.universe {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  overflow: hidden;
+  z-index: -1;
+}
 
-/* Full-screen black background */
-body, html {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    overflow: hidden; /* No scrollbars */
-  }
-  
-  .background {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-  
-  /* Star styles */
-  .star {
-    position: absolute;
-    background-color: white;
-    border-radius: 50%; /* Circular stars */
-    opacity: 0.8;
-    animation: travel linear infinite;
-  }
-  
-  /* Animation: Stars move toward the viewer */
-  @keyframes travel {
-    from {
-      transform: scale(0.5) translateY(0) translateX(0);
-      opacity: 1;
-    }
-    to {
-      transform: scale(2) translateY(200vh) translateX(50vw);
-      opacity: 0;
-    }
-  }
-  
-  /* Responsive Design for Phones */
-  @media (max-width: 768px) {
-    .star {
-      width: 2px; /* Smaller stars for phones */
-      height: 2px;
-    }
-  
-    /* Slower animation for smaller screens */
-    @keyframes travel {
-      from {
-        transform: scale(0.3) translateY(0) translateX(0);
-        opacity: 1;
-      }
-      to {
-        transform: scale(1.5) translateY(200vh) translateX(50vw);
-        opacity: 0;
-      }
-    }
-  }
-  
+.universe::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, white, transparent 50%);
+  opacity: 0.8;
+  animation: moveStars 30s linear infinite;
+}
 
-  
+@keyframes moveStars {
+  from {
+      transform: translateX(0) translateY(0);
+  }
+  to {
+      transform: translateX(-50%) translateY(-50%);
+  }
+}

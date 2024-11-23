@@ -13,37 +13,10 @@
     background: linear-gradient(to right, #FFD700, #FF6347, #FF1493);
     color: transparent;
     -webkit-background-clip: text;
-    background-clip: text;
     font-size: 3em;
     white-space: nowrap;
 }
 
 .message h2 {
     font-size: 2.5em;
-}
-
-/* Animation for smooth appearance of message */
-.message h1, .message h2 {
-    animation: fadeIn 5s ease-out forwards;  /* Increased duration to 3 seconds */
-}
-
-/* Fade-in animation */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-/* Media query for smaller screens (phones) */
-@media screen and (max-width: 600px) {
-    .message h1 {
-        font-size: 2em;  /* Make "Happy Birthday" smaller on phones */
-    }
-
-    .message h2 {
-        font-size: 2em;  /* Optionally adjust "Rinsamoo" size too */
-    }
 }
