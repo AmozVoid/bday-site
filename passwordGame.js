@@ -1,18 +1,19 @@
-let correctPassword = "isntthemoonlovelyashii"; // Default password
+const correctPassword = "isntthemoonlovelyashii";
 
-function checkPassword() {
-    let userGuess = document.getElementById('password-input').value;
-    let feedback = document.getElementById('feedback');
-    let greetingMessage = document.getElementById('greetingMessage');
-    
-    if (userGuess === correctPassword) {
-        feedback.textContent = "🎉 Congratulations! You guessed it right!";
-        feedback.style.color = "green";
+// Centering the game and hiding the greeting initially
+document.getElementById("greeting").style.display = "none";
+document.getElementById("passwordGame").style.display = "flex";
 
-        // Show the greeting message once the password is correct
-        greetingMessage.style.display = "block";
+// Password check
+document.getElementById("submitPassword").addEventListener("click", () => {
+    const userInput = document.getElementById("passwordInput").value.trim();
+    const passwordHint = document.getElementById("passwordHint");
+
+    if (userInput === correctPassword) {
+        document.getElementById("passwordGame").style.display = "none";
+        document.getElementById("greeting").style.display = "block";
     } else {
-        feedback.textContent = "Oops! Try again!";
-        feedback.style.color = "red";
+        passwordHint.textContent = "Incorrect! Here's a hint: " +
+            "The password has something to do with the moon and someone named Ashii.";
     }
-}
+});
