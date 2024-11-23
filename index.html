@@ -1,23 +1,29 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>HAPPY BIRTHDAY TO YOU RINSAMMO....!</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="greet.css">
-  </head>
-  <body>
-    <div id="background" class="background">
-    
-       <!-- Birthday message -->
-  <div class="message">
-    <h1>Happy Birthday</h1>
-    <h2>Rinsamoo!</h2>
-    
-  </div>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Website</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Basic website styles -->
+    <link rel="stylesheet" href="passwordGame.css"> <!-- Password game styles -->
+    <link rel="stylesheet" href="greet.css"> <!-- Greeting message styles -->
+</head>
+<body>
+    <!-- Password Guessing Game -->
+    <div class="password-game">
+        <h3>Guess the Password!</h3>
+        <input type="text" id="password-input" placeholder="Enter your guess" />
+        <button onclick="checkPassword()">Submit</button>
+        <p id="feedback"></p>
     </div>
-    <script src="script.js"></script>
-  </body>
-  </html>
+
+    <!-- Greeting message (hidden initially) -->
+    <div class="message" id="greetingMessage">
+        <h1>Happy Birthday</h1>
+        <h2>Rinsamoo</h2>
+    </div>
+
+    <script src="script.js"></script> <!-- General functionality -->
+    <script src="passwordGame.js"></script> <!-- Password game logic -->
+</body>
+</html>
